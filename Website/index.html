@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<title>Rakhman Ismailov</title>
+<link href="style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="main">
+<h1>Rakhman Ismailov</h1>
+<hr>
+<h2>Min første nettside</h2>
+<h3> Om meg selv:</h3>
+<p> Noxchi vu so.</p>
+</div>
+</body>
+<h4>bilde av meg selv</h4>
+<img src="Bilde av Rakhman i rød nike genser.jpg" />
+
+</html>
+<a href="https://www.byron-bay.com/" target="_blank">
+<img src="/pix/byron_bay_225x169.jpg" style="border:1px solid black;max-width:100%;" alt="Photo of Byron Bay, one of Australia's best beaches!">
+</a><p>The <code>push()</code> method adds one or more elements to the end of an array and returns the new length of the array.</p>
+<p>The function <code>selectAll()</code> highlights all the text in the
+input field so the user can, for example, copy or delete the text.</p>
+class Character:
+  def __init__(self):
+    self.name = ""
+    self.health = 1
+    self.health_max = 1
+  def do_damage(self, enemy):
+    damage = min(
+        max(randint(0, self.health) - randint(0, enemy.health), 0),
+        enemy.health)
+    enemy.health = enemy.health - damage
+    if damage == 0: print "%s evades %s's attack." % (enemy.name, self.name)
+    else: print "%s hurts %s!" % (self.name, enemy.name)
+    return enemy.health <= 0
+ 
+class Enemy(Character):
+  def __init__(self, player):
+    Character.__init__(self)
+    self.name = 'a goblin'
+    self.health = randint(1, player.health)
+ 
+class Player(Character):
+  def __init__(self):
+    Character.__init__(self)
+    self.state = 'normal
+	insert<html insert a trffical document choosen by a document
+	<css insert
+	counter repeat technillagy
+	
+    self.health = 10
+    self.health_max = 10
+  def quit(self):
+    print " nR.I.P." % self.name
+    self.health = 0
+  def help(self): print Commands.keys()
+  def status(self): print "%s's health: %d/%d" % (self.name, self.health, self.health_max)
+  def tired(self):
+    print "%s feels tired." % self.name
+    self.health = max(1, self.health - 1)
+  def rest(self):
+    if self.state != 'normal': print "%s can't rest now!" % self.name; self.enemy_attacks()
+    else:
+      print "%s rests." % self.name
+      if randint(0, 1):
+        self.enemy = Enemy(self)
+        print "%s is rudely awakened by %s!" % (self.name, self.enemy.name)
+        self.state = 'fight'
+        self.enemy_attacks()
+		formaction - wrong
+      else:
+        if self.health < self.health_max: 
+		<html> insert css
+          
+		  self.health = self.health + 1
+        else: print "%s slept too much." % self.name; self.health = self.health - 1
+  def explore(self):
+    if self.state != 'normal':
+      print "%s is too busy right now!" % self.name
+      self.enemy_attacks()
+    else:
+      print "%s explores a twisty passage." % self.name
+      if randint(0, 1):
+        self.enemy = Enemy(self)
+        print "%s encounters %s!" % (self.name, self.enemy.name)
+        self.state = 'fight'
+      else:
+        if randint(0, 1): self.tired()
+  def flee(self):
+    if self.state != 'fight': print "%s runs in circles for a while." % self.name; self.tired()
+    else:
+      if randint(1, self.health + 5) > randint(1, self.enemy.health):
+        print "%s flees from %s." % (self.name, self.enemy.name)
+        self.enemy = None
+        self.state = 'normal'
